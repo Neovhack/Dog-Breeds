@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+ * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.formCreate {
+	align-items: center;
+	background: #d8aa96;
+	color: rgba(0, 0, 0, .8);
+	display: grid;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	height: 70vh;
+	justify-items: center;
+	width: 100vw;
+}
+.signupContainer {
+	display: grid;
+	grid-template-areas: "left right";
+
+}
+.leftContainer {
+
+	text-align: center;
+	position: relative;
+ 	overflow: hidden;
+	width: 380px;
+	height: 300px;
+}
+.leftContainer .puppy {
+	bottom: -5px;
+	position: absolute;
+	text-align: center;
+}
+
+.imageDetails {
+	width:  380px;
+    height: 300px;
+	background-size: cover;
+}
+
+.cardImageNull {
+	padding: 0px;
+    width: 400px;
+    height: 280px;
+    background-color: grey;
+}
+
+.cardImageNullText {
+    text-align: center;
+}
+
+.leftContainer img {
+	width:100%;
+}
+.rightContainer {
+	background: #f9c7c2;
+	display: grid;
+	grid-template-areas: "." ".";
+	width: 600px;
+}
+.rightContainer h1:nth-of-type(1) {
+	color: rgba(0, 0, 0, .8);
+	font-size: 34px;
+	font-weight: 600;
+}
+.rightContainer p {
+	font-size: 15px;
+	font-weight: 600;
+	padding: 5px;
+}
+.rightContainer .set {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0;
+}
+.rightContainer header {
+	padding: 40px;
+}
+.breedsName label, .petsProperties label, .petsBirthday label, .petsPropertiesA label, .petsSpayedNeutered label, .petsTemperamets label {
+	display: block;
+	margin-bottom: 5px;
+}

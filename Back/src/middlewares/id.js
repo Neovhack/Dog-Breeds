@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { Dog, Op } = require('../db.js')
+//const { Dog, Op } = require('../db.js')
 
 const url = "https://api.thedogapi.com/v1/breeds"
 const router = Router();
@@ -12,6 +12,7 @@ async function fetcher () {
 
 router.get("/:id", async (req, res) => {
     try {
+        console.log("hola1");
         const { id } = req.params
         let result = await fetcher()
         let dogId = result.find(e => e.id == id) 
@@ -24,6 +25,7 @@ router.get("/:id", async (req, res) => {
                     weight: dogId.weight.metric,
                     height: dogId.height.metric
                 }
+                console.log(apiResume);
             res.json(apiResume)
       /*   }  else { 
             const bsdogId = await Dog.findByPk(id) 

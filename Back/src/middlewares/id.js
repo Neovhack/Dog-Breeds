@@ -4,22 +4,18 @@ const { Router } = require('express');
 const url = "https://api.thedogapi.com/v1/breeds"
 const router = Router();
 
-async function fetcher () {
-    let fetcher = await fetch(url)
+/* async function fetcher () {
+    let fetcher = await fetch("https://api.thedogapi.com/v1/breeds")
     let data = await fetcher.json()
     return data
-}
+} */
 
 router.get("/:id", async (req, res) => {
     try {
-        console.log("hola1");
         const { id } = req.params
-        console.log(id);
-        let result = await fetcher()
-        console.log("hola2");
-        console.log(result);
-        let dogId = result.find(e => e.id == id) 
-        console.log(dogId);
+        let fetcher = await fetch("https://api.thedogapi.com/v1/breeds")
+        let data = await fetcher.json()
+        let dogId = data.find(e => e.id == id) 
         // if(dogId !== undefined){
             let apiResume =  {
                     id: dogId.id,
@@ -29,7 +25,6 @@ router.get("/:id", async (req, res) => {
                     weight: dogId.weight.metric,
                     height: dogId.height.metric
                 }
-                console.log(apiResume);
             res.json(apiResume)
       /*   }  else { 
             const bsdogId = await Dog.findByPk(id) 

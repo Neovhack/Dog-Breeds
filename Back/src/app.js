@@ -19,13 +19,36 @@ server.use(morgan('dev'));
 
 //'https://dog-breeds.up.railway.app'
 //http://localhost:80
-server.use((req, res, next) => {
+/* server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://dog-breeds.up.railway.app'); // update to match the domain you will make the request from
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
-});
+}); */
+
+server.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "http://dog-breeds.up.railway.app",
+      "https://dog-breeds.up.railway.app",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"],
+    credentials: true,
+    optionsSuccessStatus: 200,
+  })
+);
+
+
+
+
+
+
+
+
 server.use('/dogs', dogs);
 server.use("/temperaments", temperaments)
 

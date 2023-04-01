@@ -11,7 +11,8 @@ async function fetcher () {
 }
 
 router.get("/:id", async (req, res) => {
-    try {
+    res.json("hola")
+ /*    try {
         const { id } = req.params
         let result = await fetcher()
         let dogId = result.find(e => e.id == id) 
@@ -31,7 +32,7 @@ router.get("/:id", async (req, res) => {
         } 
     } catch (error) {
         res.send(error);
-    }
+    } */
 }) 
 
 

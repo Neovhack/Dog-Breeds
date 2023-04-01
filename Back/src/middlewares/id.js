@@ -14,8 +14,12 @@ router.get("/:id", async (req, res) => {
     try {
         console.log("hola1");
         const { id } = req.params
+        console.log(id);
         let result = await fetcher()
+        console.log("hola2");
+        console.log(result);
         let dogId = result.find(e => e.id == id) 
+        console.log(dogId);
         // if(dogId !== undefined){
             let apiResume =  {
                     id: dogId.id,

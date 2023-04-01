@@ -11,12 +11,11 @@ async function fetcher () {
 }
 
 router.get("/:id", async (req, res) => {
-    res.json("hola")
- /*    try {
+    try {
         const { id } = req.params
         let result = await fetcher()
         let dogId = result.find(e => e.id == id) 
-         if(dogId !== undefined){
+        // if(dogId !== undefined){
             let apiResume =  {
                     id: dogId.id,
                     name: dogId.name,
@@ -26,13 +25,13 @@ router.get("/:id", async (req, res) => {
                     height: dogId.height.metric
                 }
             res.json(apiResume)
-        }  else { 
+      /*   }  else { 
             const bsdogId = await Dog.findByPk(id) 
                 res.json(bsdogId)
-        } 
+        }  */
     } catch (error) {
         res.send(error);
-    } */
+    }
 }) 
 
 

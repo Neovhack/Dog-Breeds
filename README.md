@@ -4,7 +4,9 @@
 
 ## Descripción  
 
-•	Pagina web para mostrar, cargar y eliminar razas de perros traidos desde API
+• Pagina web para mostrar y filtrar razas de perros traídos desde API
+
+• Permite cargar, eliminar y modificar razas nuevas desde formulario controlado a base de datos
 
 •	Filtros por nombre, edad, pesos, raza que funcionan combinados
 
